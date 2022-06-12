@@ -1,20 +1,18 @@
 import express from 'express';
-
+import { create, list, update, productById, readPhoto, read, remove } from '../controllers/product';
 const router = express.Router();
 
-router.get('/', (req, res, next) => {
-    res.json({
-        mess: "Home"
-    })
-    console.log('thanh cong', port)
-});
+router.post('/products', create);
 
-router.get('/products', (req, res, next) => {
-    res.json({
-        mess: "list products"
-    })
-    console.log('thanh cong', port)
-});
+router.get('/products', list);
+router.get('/products/:productId', read);
+// router.get('/product/photo/:productId', readPhoto);
+
+router.put('/products/:productId', update);
+
+router.delete('/products/:productId', remove);
+
+router.param('productId', productById);
 
 
 module.exports = router;
