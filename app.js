@@ -58,7 +58,8 @@ app.use('/api', Floors);
 
 
 // listen
-const port = process.env.PORT || 8000
-app.listen(port, () => {
-    console.log('Thanh cong', port);
-})
+// const port = process.env.PORT || 8000
+// app.listen(port, () => {
+//     console.log('Thanh cong', port);
+// })
+app.listen(process.env.PORT || 3000);
