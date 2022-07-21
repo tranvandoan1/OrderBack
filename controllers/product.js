@@ -49,7 +49,7 @@ export const list = (req, res) => {
     if (err) {
       error: "Không tìm thấy sản phẩm";
     }
-    res.json(data);
+    return res.json(data);
   });
 };
 

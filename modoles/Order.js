@@ -30,6 +30,10 @@ const Order = new mongoose.Schema(
     bill: {
       type: String,
     },
+    user_id:{
+      type: ObjectId,
+      ref: "users"
+    }
   },
   { timestamps: true }
 );

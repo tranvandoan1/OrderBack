@@ -1,17 +1,18 @@
 import express from 'express';
 import { create, list, Id, read, remove } from '../controllers/OrderDetail';
+import { isAuthenticateUser } from './CheckAuth';
 const router = express.Router();
 
-router.post('/orderdetail', create);
+router.post('/orderdetail',isAuthenticateUser, create);
 
-router.get('/orderdetail', list);
-router.get('/orderdetail/:id', read);
+router.get('/orderdetail',isAuthenticateUser, list);
+router.get('/orderdetail/:id',isAuthenticateUser, read);
 
 // router.put('/orderdetail/:id', update);
 
-router.delete('/orderdetail/:id', remove);
+router.delete('/orderdetail/:id',isAuthenticateUser, remove);
 
-router.param('id', Id);
+router.param('id',isAuthenticateUser, Id);
 
 
 module.exports = router;

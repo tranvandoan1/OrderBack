@@ -54,15 +54,17 @@ export const requireSignin = expressJwt({
   algorithms: ["HS256"], // added later
   userProperty: "auth",
 });
-
+console.log(requireSignin)
 export const isAuth = (req, res, next) => {
+  
   let user = req.profile && req.auth && req.profile._id == req.auth._id;
-  if (!user) {
-    return res.status(403).json({
-      error: "Quyền truy cập bị Từ chối",
-    });
-  }
-  next();
+  console.log(process.env.JWT_SECRET)
+  // if (!user) {
+  //   return res.status(403).json({
+  //     error: "Quyền truy cập bị Từ chối",
+  //   });
+  // }
+  // next();
 };
 
 export const isAdmin = (req, res, next) => {
