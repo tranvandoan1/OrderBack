@@ -9,13 +9,14 @@
     "heroku-postbuild": "npm run build"
   },
   "keywords": [],
-  "author": "",
+  "author": "eddgue",
   "license": "ISC",
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
     "body-parser": "^1.19.0",
+    "chalk": "^5.0.1",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",

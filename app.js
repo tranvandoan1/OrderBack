@@ -62,4 +62,4 @@ app.use('/api', Floors);
 // app.listen(port, () => {
 //     console.log('Thanh cong', port);
 // })
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 8000);
