@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon ./app.js --exec babel-node -e js",
-    "postinstall": "npm run build"
+    "heroku-postbuild": "npm run build"
   },
   "keywords": [],
   "author": "eddgue",
@@ -16,7 +16,6 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
     "body-parser": "^1.19.0",
-    "chalk": "^5.0.1",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
@@ -40,6 +39,7 @@
     "uuid": "^8.3.2",
     "xlsx": "^0.18.4"
   },
+  "postinstall": "ng build --aot --target=production",
   "engines": {
     "npm": "8.5.5",
     "node": "16.15.0"
