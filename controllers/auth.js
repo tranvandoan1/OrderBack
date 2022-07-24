@@ -9,7 +9,7 @@ export const signup = (req, res) => {
   user.save((error, user) => {
     if (error) {
       return res.status(400).json({
-        error: "Khoong the them",
+        error: "Đăng ký thất bại",
       });
     }
     user.salt = undefined;
@@ -23,13 +23,13 @@ export const signin = (req, res) => {
   User.findOne({ email }, (error, user) => {
     if (error || !user) {
       return res.status(400).json({
-        error: "email cua ban khong hop le . Vui long dang ki",
+        error: "Email của bạn không hợp lệ. Vui lòng đăng ký !",
       });
     }
 
     if (!user.authenticate(password)) {
       return res.status(401).json({
-        error: "email va Password cua ban khong dung",
+        error: "Email và Password của bạn không đúng",
       });
     }
 
