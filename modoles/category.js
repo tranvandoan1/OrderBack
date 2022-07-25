@@ -1,8 +1,16 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
+const { ObjectId } = mongoose.Schema;
 
-const categorySchema = new mongoose.Schema({
+const categorySchema = new mongoose.Schema(
+  {
     name: {
-        type: String,
+      type: String,
     },
-}, { timestamps: true });
-module.exports = mongoose.model('categoris', categorySchema);
+    user_id: {
+      type: ObjectId,
+      ref: "user",
+    },
+  },
+  { timestamps: true }
+);
+module.exports = mongoose.model("categoris", categorySchema);
